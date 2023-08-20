@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.1.2/css/material-design-iconic-font.min.css">
+    
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+</head>
+
+<body class="font-[Poppins] bg-gradient-to-t from-[#fbc2eb] to-[#a6c1ee] h-screen">
+    <header class="bg-[black] h-[80px] py-0.5 text-[YELLOW] ">
+        <nav class="flex justify-between items-center w-[92%]  mx-auto">
+            <img src="imgs/logo2.png" class="h-[60px] cursor-pointer">
+             
+            <div
+                class="nav-links z-50 duration-500 md:static md:h-full absolute md:bg-[black] bg-[black]
+                md:min-h-fit min-h-[30vh]  left-0 top-[-100%] md:w-auto  w-full flex items-center px-5">
+                <ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
+                    <li>
+                        <a class="hover:text-gray-500" href="#">Home</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-500" href="#"> MENU</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-500" href="#">About us</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-500" href="#">Setting</a>
+                    </li>
+
+                    <li>
+                        <a class="hover:text-gray-500" href="#">FAQ</a>
+                    </li>
+                 
+                </ul>
+            </div>
+            <div class="flex items-center gap-6">
+                <button class="text-white px-5 py-2 rounded-full  bg-[rgb(255,200,80)] shadow-[2px_2px_rgba(6,41,55,0.5)]   hover:bg-[rgb(255,215,85)]">Log out</button>
+                <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer md:hidden"></ion-icon>
+            </div>
+    </header>
+
+    <div>
+        <main class=" bg-[url('/imgs/logbackground.jpg')]  w-full fixed md:px-[100px] right-0 top-[60px] bottom-0">
+
+      <div id="message-section" class="bg-[rgba(_16,1,1,0.9)] shadow-[0_8px_32px_0_rgba(_31,38,135,0.37_)] border rounded-[10px] border-solid border-[rgba(_255,255,255,0.18_)];
+       h-[90%] flex flex-col gap-2.5 overflow-y-auto overflow-x-hidden ">
+       <div id="bot">Welcome to IntrovertsHeaven! How may I assist you today? </div>
+
+       
+       </main>
+
+<div class="fixed h-[9%] md:rounded-[20px]  border-solid border-[rgba(1,1,1,0.2)] md:px-[100px] w-full flex items-center  bottom-0">
+  <input id="input" class="h-full w-[90%] indent-[2%] text-[23px]" type="textarea" placeholder="Enter message"/>
+  <button class="flex items-center justify-center bg-[rgb(255,200,80)] shadow-[2px_2px_rgba(6,41,55,0.5)]  hover:bg-[rgb(255,215,85)] h-full w-[10%]  text-[27px]"
+  id="send"><div class="circle"><i class="zmdi zmdi-mail-send"></i></div></button>
+</div>
+    </div>
+
+
+    <script type="module" src="/main.js"></script>
+
+    <script>
+        const navLinks = document.querySelector('.nav-links')
+        function onToggleMenu(e){
+            e.name = e.name === 'menu' ? 'close' : 'menu'
+            navLinks.classList.toggle('top-[9%]')
+        }
+    </script>
+</body>
+
+</html>
